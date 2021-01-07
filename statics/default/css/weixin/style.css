@@ -1,0 +1,417 @@
+html, body, div, span, em, p, strong, i, ul, ol, dl, dt, dd, h1, h2, h3, img {
+    margin: 0px;
+    padding: 0px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    color: #333;
+}
+
+html {
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 320px) {
+    html {
+        font-size: 20px !important
+    }
+}
+
+@media only screen and (min-width: 360px) {
+    html {
+        font-size: 22.5px !important
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    html {
+        font-size: 23.4375px !important
+    }
+}
+
+@media only screen and (min-width: 400px) {
+    html {
+        font-size: 25px !important
+    }
+}
+
+@media only screen and (min-width: 414px) {
+    html {
+        font-size: 25.875px !important
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    html {
+        font-size: 30px !important
+    }
+}
+
+@media only screen and (min-width: 520px) {
+    html {
+        font-size: 32.5px !important
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    html {
+        font-size: 40px !important
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    html {
+        font-size: 46.875px !important
+    }
+}
+
+.page-backgroud {
+    background-image: url(../../images/weixin/main-bg@2x.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+}
+
+.user-section {
+    position: relative;
+    padding-top: 1.28rem;
+}
+
+.register-tabs {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #e7f1ff;
+    color: rgba(51, 51, 51, 1);
+    font-size: .64rem;
+    display: -webkit-flex;
+    display: flex;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.register-tabs .tab-link {
+    flex: 1;
+    text-align: center;
+    height: 2.2187rem;
+    line-height: 2.2187rem;
+    color: rgba(51, 51, 51, 1);
+    position: relative;
+}
+
+.register-tabs .tab-link.tab-on {
+    color: #2a80fe;
+}
+
+.register-tabs .tab-link.tab-on:after {
+    content: '';
+    position: absolute;
+    border-color: transparent transparent #fff transparent;
+    border-style: solid;
+    border-width: 10px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -10px;
+}
+
+.register_form {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #fff;
+    margin-top: 0;
+}
+
+.register_form .weui-cell {
+    padding-top: 1.0667rem;
+    font-size: .5973rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.register_form .weui-input {
+    font-size: .64rem;
+    color: rgba(51, 51, 51, 1);
+}
+
+.register_form .weui-label {
+    width: 4.48rem;
+    font-size: .5973rem;
+    color: rgba(195, 195, 195, 1);
+}
+
+.register_form .icon-label {
+    vertical-align: -.2133rem;
+    margin-right: 5px;
+}
+
+.register_form .weui-vcode-btn {
+    color: rgba(186, 202, 224, 1);
+    color: #2a80fe;
+    border: 0;
+    font-size: .64rem;
+}
+
+.icon-label {
+    display: inline-block;
+    width: .9387rem;
+    height: .9387rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.register_form .weui-cell:before {
+    left: 0;
+}
+
+.register_form .weui-cell:last-child:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    z-index: 2;
+}
+
+.register_form.weui-cells:before, .register_form.weui-cells:after {
+    border: 0;
+}
+
+.register_form .weui-uploader__input-box {
+    border-style: dashed;
+    flex-shrink: 0;
+}
+
+.weui-uploader__box {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-end;
+}
+
+.weui-uploader__box .uploader-tips {
+    color: #999;
+    font-size: .4267rem;
+    margin-bottom: 9px;
+}
+
+.weui-uploader__file {
+    background-color: #eee;
+    position: relative;
+}
+
+.weui-uploader__del {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+}
+
+.weui-btn:after {
+    border: 0;
+}
+
+.btn-blue {
+    background-color: #2a80fe;
+    color: #fff;
+    border: 0;
+}
+
+.weui-btn_default {
+    background-color: #fff;
+    overflow: visible;
+}
+
+.weui-btn_default:after {
+    border: 1px solid #999;
+}
+
+.avater-item {
+    width: 3.4133rem;
+    height: 3.4133rem;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #efefef;
+    margin-bottom: 1.28rem;
+    border: 1px solid #fff;
+}
+
+.avater-item > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;;
+}
+
+.phone-change {
+    position: relative;
+    padding-right: 12px;
+}
+
+.phone-change:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #2a80fe;
+    border-bottom: 0;
+    border-left: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.radius-top {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.weui-tabbar {
+    position: fixed;
+    background-color: #fff;
+}
+
+.weui-tabbar__item.weui-bar__item--on .weui-tabbar__label {
+    color: #2a80fe;
+}
+
+.initiator-form .recom-cell {
+    display: none;
+}
+
+.ordinary-form .uploader-cell {
+    display: none;
+}
+
+.weui-toast {
+    width: 5rem;
+    min-height: 5rem;
+}
+
+.weui-toast.weui-toast--text {
+    min-height: initial;
+}
+
+.weui-toast_content {
+    font-size: .512rem;
+}
+
+.icon-menu-1, .icon-menu-2, .icon-menu-3 {
+    background-size: auto 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.icon-menu-1 {
+    background-image: url(../../images/weixin/menu-1-0.png);
+}
+
+.icon-menu-2 {
+    background-image: url(../../images/weixin/menu-2-0.png);
+}
+
+.icon-menu-3 {
+    background-image: url(../../images/weixin/menu-3-0.png);
+}
+
+.weui-bar__item--on .icon-menu-1 {
+    background-image: url(../../images/weixin/menu-1-1.png);
+}
+
+.weui-bar__item--on .icon-menu-2 {
+    background-image: url(../../images/weixin/menu-2-1.png);
+}
+
+.weui-bar__item--on .icon-menu-3 {
+    background-image: url(../../images/weixin/menu-3-1.png);
+}
+
+.icon-man {
+    background-image: url(../../images/weixin/icon-man@2x.png);
+}
+
+.icon-phone {
+    background-image: url(../../images/weixin/icon-phone@2x.png);
+}
+
+.icon-shield {
+    background-image: url(../../images/weixin/icon-shield@2x.png);
+}
+
+.icon-mans {
+    background-image: url(../../images/weixin/icon-mans@2x.png);
+}
+
+.icon-camera {
+    background-image: url(../../images/weixin/icon-camera@2x.png);
+}
+
+.icon-house {
+    background-image: url(../../images/weixin/icon-house@2x.png);
+}
+
+.pt-20 {
+    padding-top: .8533rem;
+}
+
+.pt-40 {
+    padding-top: 1.7067rem;
+}
+
+.pt-60 {
+    padding-top: 2.56rem;
+}
+
+.pt-130 {
+    padding-top: 5.5467rem;
+}
+
+.pb-5 {
+    padding-bottom: 5px;
+}
+
+.pb-40 {
+    padding-bottom: 1.7067rem;
+}
+
+.pb-60 {
+    padding-bottom: 2.56rem;
+}
+
+.pb-80 {
+    padding-bottom: 3.4133rem;
+}
+
+.fs-10 {
+    font-size: .4267rem !important;
+}
+
+.fs-12 {
+    font-size: .512rem !important;
+}
+
+.fs-16 {
+    font-size: .6827rem !important;
+}
+
+.fs-20 {
+    font-size: .8533rem !important;
+}
+
+.fs-30 {
+    font-size: 1.28rem !important;
+}
+
+.cl-999 {
+    color: #999;
+}

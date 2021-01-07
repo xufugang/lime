@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteRule ^(house|news)/(\d+).html$  index.php/$1/detail/id/$2 [S,PT,L]
+#RewriteRule ^(house|news)/(.*)$  index.php/$1/$2 [S,PT,L]
+RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+
+</IfModule>
