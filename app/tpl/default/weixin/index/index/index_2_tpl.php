@@ -50,7 +50,7 @@ include getTpl('header', 'public');
     width:100%; 
     height:100%; 
     z-index:999; 
-    background-image: url(http://static.51jhome.com/statics/topic/0711ldz/images/cover.jpg); 
+    background-image: url(/statics/default/images/default.png);
     background-repeat:no-repeat; 
     background-size:100% 100%;
 }
@@ -219,7 +219,7 @@ $(function () {
 		});
 	};  
     img.onerror = function(){console.lg("img error!")};  
-    img.src="http://static.51jhome.com/statics/topic/0711ldz/images/cover.jpg";
+    img.src="http://115.29.221.164/statics/default/images/default.png";
     
     //开头
 
@@ -364,15 +364,8 @@ $(function () {
 
             flv: flv,
 
-			//m3u8: m3u8 || '	http://2668.liveplay.myqcloud.com/live/2668_61fea0e24a6511e791eae435c87f075e_550.m3u8',
-
             m3u8: m3u8 ||liveurl,
 
-			//m3u8: m3u8 || 'http://1251132611.vod2.myqcloud.com/4126dd3evodtransgzp1251132611/8a592f8b9031868222950257296/f0.f240.m3u8',
-
-            //m3u8_hd: m3u8 || 'http://1251132611.vod2.myqcloud.com/4126dd3evodtransgzp1251132611/8a592f8b9031868222950257296/f0.f230.m3u8',
-
-           // m3u8_sd: m3u8 || 'http://1251132611.vod2.myqcloud.com/4126dd3evodtransgzp1251132611/8a592f8b9031868222950257296/f0.f220.m3u8',
 
             mp4 : mp4 ,
 

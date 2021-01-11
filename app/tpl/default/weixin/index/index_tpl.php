@@ -16,7 +16,7 @@ $Document = array(
 include getTpl('header', 'public');
 ?>
 <script type="text/javascript">
-    var API_URL = 'http://192.168.17.29/shqwy/weixin/register/';//'http://event.51jhome.com/saihong/weixin/register/';
+    var API_URL = 'http://192.168.17.29/shqwy/weixin/register/';
     var dataForWeixin = {
         share_title: "赛虹桥物业管理系统",
         share_desc: "",

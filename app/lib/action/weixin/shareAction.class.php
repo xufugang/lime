@@ -9,7 +9,7 @@ class shareAction extends action {
     private $refer = array();
 
     function __construct() {
-        $this->refer = array('tengo.com', 'hzforall.com', '51jhome.com');
+        $this->refer = array('tengo.com', 'hzforall.com');
         parent::__construct();
     }
 
