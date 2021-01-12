@@ -15,19 +15,19 @@ $Document = array(
 );
 include getTpl('header', 'public');
 ?>
-<header class="navbar-wrapper">
+<header class="navbar-wrapper" id="header-bar">
     <div class="navbar navbar-fixed-top">
         <div class="container-fluid cl">
             <a class="logo navbar-logo f-l mr-10 hidden-xs" title="<?php echo WEB_TITLE; ?>"
-               href="<?php echo U('index/index'); ?>"><?php echo WEB_TITLE; ?></a>
-            <span class="logo navbar-slogan f-l mr-10 hidden-xs"><?php echo $version; ?></span>
-            <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
-
+               href="<?php echo U('index/index', array('id' => $id)); ?>"><?php echo WEB_TITLE; ?></a><span
+                    class="logo navbar-slogan f-l mr-10 hidden-xs"><?php echo $version; ?></span> <a aria-hidden="false"
+                                                                                                     class="nav-toggle Hui-iconfont visible-xs"
+                                                                                                     href="javascript:;">&#xe667;</a>
             <nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
                 <ul class="cl">
-                    <li></li>
+                   <!-- <li><?php /*echo '操作手册'; */?></li>-->
                     <li class="dropDown dropDown_hover"><a href="javascript:;"
-                                                           class="dropDown_A"><?php echo $adminInfo['name']; ?> <i
+                                                           class="dropDown_A"><?php echo $adminInfo['username']; ?> <i
                                     class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
                             <?php foreach ($sysMenu['user'] as $v) {
@@ -100,9 +100,26 @@ include getTpl('header', 'public');
 </header>
 <aside id="menu-aside" class="Hui-aside">
     <div class="menu_dropdown bk_2" id="left_menu_dropdown">
-        <?php foreach ($sysMenu['main'] as $key=>$value) { ?>
+        <?php foreach ($sysMenu['main'] as $value) { ?>
             <dl id="menu-<?php echo $value['short']; ?>">
-                <dt id="<?php echo $value['short']; ?>" style="color: <?php echo $value['short']=='admin'?'#03bb9b':'';  ?>"><?php echo $value['title']; ?></dt>
+                <dt><?php echo $value['title']; ?></dt>
+                <dd>
+                    <ul>
+                        <?php foreach ($value['item'] as $val) { ?>
+                            <?php
+                            if (isset($val['new']) && $val['new']) {
+                                ?>
+                                <li><a target="_blank" href="<?php echo $val['url']; ?>"
+                                       data-title="<?php echo $val['title']; ?>"><?php echo $val['title']; ?></a></li>
+                            <?php } else {
+                                ?>
+                                <li><a id="hash-<?php echo $val['short']; ?>" _href="<?php echo $val['url'].'?id='.$id; ?>"
+                                       href="javascript:;" data-hash="<?php echo $val['short']; ?>"
+                                       data-title="<?php echo $val['title']; ?>"><?php echo $val['title']; ?></a></li>
+                            <?php } ?>
+                        <?php } ?>
+                    </ul>
+                </dd>
             </dl>
         <?php } ?>
     </div>
@@ -112,58 +129,8 @@ include getTpl('header', 'public');
         <div class="show_iframe">
             <div style="display:none" class="loading"></div>
             <iframe scrolling="yes" id="mainframe" name="mainframe" frameborder="0"
-                    src="<?php echo U('index/init'); ?>">
-            </iframe>
+                    src="<?php echo U('index/init'); ?>"></iframe>
         </div>
     </div>
 </section>
-<script>
-    $(document).ready(function(){
-        $('dt').off('mouseenter').unbind('mouseleave');
-    });
-    $("#menu-admin").click(function () {
-        $("#menu-admin").css({"background-color":"#f7f7f7"});
-        $("#admin").css({"color":"#03bb9b"});
-        $("#menu-live").css({"background-color":""});
-        $("#live").css({"color":""});
-        $("#menu-channel").css({"background-color":""});
-        $("#channel").css({"color":""});
-        $("#menu-content").css({"background-color":""});
-        $("#user").css({"color":""});
-        $("#mainframe").attr("src","<?php echo U('index/init'); ?>");
-    });
-    $('#menu-live').click(function () {
-        $("#menu-admin").css({"background-color":""});
-        $("#admin").css({"color":""});
-        $("#menu-live").css({"background-color":"#f7f7f7"});
-        $("#live").css({"color":"#03bb9b"});
-        $("#menu-channel").css({"background-color":""});
-        $("#channel").css({"color":""});
-        $("#menu-content").css({"background-color":""});
-        $("#user").css({"color":""});
-        $("#mainframe").attr("src","<?php echo U('live/index'); ?>");
-    });
-    $('#menu-channel').click(function () {
-        $("#menu-admin").css({"background-color":""});
-        $("#admin").css({"color":""});
-        $("#menu-live").css({"background-color":""});
-        $("#live").css({"color":""});
-        $("#menu-channel").css({"background-color":"#f7f7f7"});
-        $("#channel").css({"color":"#03bb9b"});
-        $("#menu-content").css({"background-color":""});
-        $("#user").css({"color":""});
-        $("#mainframe").attr("src","<?php echo U('channel/index'); ?>");
-    });
-    $('#menu-user').click(function () {
-        $("#menu-admin").css({"background-color":""});
-        $("#admin").css({"color":""});
-        $("#menu-live").css({"background-color":""});
-        $("#live").css({"color":""});
-        $("#menu-channel").css({"background-color":""});
-        $("#channel").css({"color":""});
-        $("#menu-content").css({"background-color":"#f7f7f7"});
-        $("#user").css({"color":"#03bb9b"});
-        $("#mainframe").attr("src","<?php echo U('user/index'); ?>");
-    });
-</script>
 <?php include getTpl('footer', 'public'); ?>

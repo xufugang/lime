@@ -7,7 +7,7 @@ $Document = array(
     'pagename' => '', //当前页面名称
     'keywords' => '', //关键字
     'description' => '', //描述
-    'mycss' => array(), //加载的css样式表
+    'mycss' => array('admin/lib/live/style'), //加载的css样式表
     'myjs' => array(), //加载的js脚本
     'footerjs' => array(),
     'head' => true,
@@ -16,45 +16,46 @@ $Document = array(
 include getTpl('header', 'public');
 ?>
     <!--主体 开始-->
-    <div class="pd-20 main-content md-20">
-        <div class="cl pd-5 bg-1 bk-gray">
+    <div class=" main-content md-20 pl-20 pr-20">
+        <div class="ac-filter-section">
             <span class="l">
-            <!--添加链接-->
+                <!--添加链接-->
                     <a href="<?php echo U('admin/add'); ?>" data-width="800" data-height="600"
                        class="btn btn-success radius openWinPop">添加账户</a>
                 <!--添加链接-->
             </span>
             <span class="r">
-	<!--搜索框-->
-	<div class="text-l">
-		<form id="form1" name="form1" method="get" action="<?php echo U('index/init'); ?>">
-              <span class="select-box" style="width:150px;">
-                <select class="select" name="type" id="type" size="1">
-                <option value="0" <?php if (!$type) {
-                    echo 'selected';
-                } ?>>全部</option>
-                    <?php
-                    foreach ($setting['user_type'] as $key => $val) {
-                        ?>
-                        <option value="<?php echo($key); ?>" <?php if (($key) == $type) {
-                            echo 'selected';
-                        } ?>><?php echo $val; ?></option>
-                        <?php
-                    }
-                    ?>
-                </select>
-              </span>
-            <input type="text" class="input-text" style="width:250px" placeholder="输入关键字..." id="q" name="q">
-            <button type="submit" class="btn btn-success radius" id="" name=""><i
-                        class="Hui-iconfont">&#xe665;</i> 搜索
-            </button>
-            </form>
-        </div>
                 <!--搜索框-->
-        </span>
+                <div class="text-l">
+                    <form id="form1" name="form1" method="get" action="<?php echo U('index/init'); ?>">
+                          <span class="select-box radius" style="width:150px;">
+                            <select class="select" name="type" id="type" size="1">
+                            <option value="0" <?php if (!$type) {
+                                echo 'selected';
+                            } ?>>全部</option>
+                                <?php
+                                foreach ($setting['user_type'] as $key => $val) {
+                                    ?>
+                                    <option value="<?php echo($key); ?>" <?php if (($key) == $type) {
+                                        echo 'selected';
+                                    } ?>><?php echo $val; ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                          </span>
+                        <input type="text" class="input-text radius" style="width:250px" placeholder="输入关键字..." id="q"
+                               name="q">
+                        <button type="submit" class="btn btn-success radius" id="" name=""><i
+                                    class="Hui-iconfont">&#xe665;</i> 搜索
+                        </button>
+                        </form>
+                    </div>
+                <!--搜索框-->
+            </span>
         </div>
         <div class="mt-20">
-            <table class="table table-border table-bordered table-hover table-bg table-sort">
+            <table class="table table-border table-no-bordered table-hover table-bg table-sort">
                 <thead>
                 <tr class="text-c">
                     <th align="center">序号</th>

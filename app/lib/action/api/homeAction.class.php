@@ -41,7 +41,7 @@ class homeAction extends commonAction
         $isHave = M('account')->where(['phone' => $phone])->find();
         if ($isHave) {
             $token = D('account')->getUserToken($isHave['id']);
-            $this->JsonReturn('该手机号码已经注册啦', ['isPerson' => $isHave['nike_name'] ? 1 : 0,'token'=>$token], 1);
+            $this->JsonReturn('该手机号码已经注册啦', ['isPerson' => $isHave['nike_name'] ? 1 : 0,'token'=>$token,'uid'=>$isHave['id']], 1);
         }
         //验证验证码
         $lastCode = M('check_code')->where(['phone' => $phone, 'status' => 1])->order('create_time desc')->find();
