@@ -41,7 +41,7 @@ class indexAction extends commonAction
             $where['group_id'] = $type;
         }
         if (trim($q)) {
-            $where['LIKE'] = array('name' => parent::safeSearch($q));
+            $where['LIKE'] = array('username' => parent::safeSearch($q));
         }
         $rs = M('admin')->where($where)->order('login_time desc')->page($p)->findAll();
         $total = M('admin')->getTotal();

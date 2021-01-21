@@ -9,7 +9,7 @@ if (!defined('IN_XLP')) {
  *
  * @author xufg
  */
-class adminAction extends commonAction
+class themeAction extends commonAction
 {
 
     public function __construct()
@@ -17,6 +17,11 @@ class adminAction extends commonAction
         parent::__construct();
         parent::_checkLogin();
         parent::_checkValidity();
+    }
+
+    public function index()
+    {
+        $this->display();
     }
 
     //添加用户
@@ -173,31 +178,6 @@ class adminAction extends commonAction
         $this->JsonReturn('修改失败，您可能没有做修改');
 
 
-    }
-
-    //获取城市信息
-    public function getcity()
-    {
-        $city_id = $this->_post('city_id');
-        if (!$city_id) {
-            $this->JsonReturn('省份不能为空');
-        }
-        $city = M('city')->where(array('pid' => $city_id))->order('city_id asc')->findAll();
-        $inhtml = '';
-        $direct_city = array('110000', '120000', '310000', '500000');
-        foreach ($city as $key => $val) {
-            if (in_array($val['pid'], $direct_city)) {
-                if ($key) {
-                    break;
-                }
-                $inhtml = $inhtml . '<option value=' . $val['city_id'] . ' >  ' . $val['name'] . ' </option>';
-
-            } else {
-                $inhtml = $inhtml . '<option value=' . $val['city_id'] . ' >  ' . $val['name'] . ' </option>';
-            }
-
-        }
-        $this->JsonReturn('ok', $inhtml, 1);
     }
 
 

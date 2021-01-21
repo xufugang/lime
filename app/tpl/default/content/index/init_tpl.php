@@ -49,8 +49,8 @@ include getTpl('header', 'public');
                         <button type="submit" class="btn btn-success radius" id="" name=""><i
                                     class="Hui-iconfont">&#xe665;</i> 搜索
                         </button>
-                        </form>
-                    </div>
+                    </form>
+                </div>
                 <!--搜索框-->
             </span>
         </div>
@@ -78,11 +78,11 @@ include getTpl('header', 'public');
                         ?>
                         <tr class="text-c" id="list_detail_<?php echo $val['id']; ?>">
                             <td><?php echo $val['id']; ?></td>
-                            <td><?php echo $val['name']; ?></td>
-                            <td><?php echo $val['login_num']; ?></td>
-                            <td><?php echo $val['login_ip']; ?></td>
-                            <td><?php echo $val['last_login'] ? outTime($val['last_login']) : '-'; ?></td>
-                            <td><?php echo $val['validity_time'] ? outTime($val['validity_time'], 2) : '长期有效'; ?></td>
+                            <td><?php echo $val['username']; ?></td>
+                            <td><?php echo $val['login_count']; ?></td>
+                            <td><?php echo long2ip($val['login_ip']); ?></td>
+                            <td><?php echo $val['login_time'] ? outTime($val['login_time']) : '-'; ?></td>
+                            <td><?php echo $val['effective'] ? outTime($val['effective'], 2) : '长期有效'; ?></td>
                             <td><?php echo $val['group_id'] == 1 ? '<span class="label label-warning radius">管理员</span>' : '<span class="label label-primary radius">直播员</span>'; ?></td>
                             <td><?php echo $val['status'] == 1 ? '<span class="label label-success radius">正常</span>' : '<span class="label label-danger radius">冻结</span>'; ?></td>
                             <td class="td-manage manage-tools">
@@ -130,7 +130,6 @@ include getTpl('header', 'public');
                 return false;
             });
         });
-
     </script>
     <!--主体 结束-->
 <?php include getTpl('footer', 'public'); ?>

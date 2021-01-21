@@ -104,8 +104,8 @@ class homeAction extends commonAction
      */
     public function initMsg()
     {
-        $uid = $this->_post('uid', 0);
-        $token = $this->_post('token');
+        $uid = $this->uid;//$this->_post('uid', 0);
+        $token = $this->token;//$this->_post('token');
         if (empty($uid) || empty($token)) {
             $this->JsonReturn('缺少参数');
         }
